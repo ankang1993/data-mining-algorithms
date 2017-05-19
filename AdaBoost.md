@@ -11,8 +11,7 @@
 
 这样的过程被重复T轮后，最后的模型就可以由T个弱学习者进行加权多数投票导出，其中学习者的权重在训练的过程决定。在实际的情况中，基础学习算法可能是一个能直接使用加权训练实例的学习算法；否则权重能够通过根据权重分布D_t对训练实例进行抽样来利用。AdaBoost的伪代码如下图所示：
 
-!()[https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/
-7.1.png]
+!()[https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/7.1.png]
 
 为了处理多个类的问题，Freund和Schapire提出了AdaBoost.M1算法,它要求弱学习者即使在Adab过程中产生的硬分布上也要足够强大。AdaBoost另一个流行的多类版本是Adab.MH，它通过将多类任务分解为一系列的二元任务来工作。也研究过用于处理回归问题的AdaBoost算法。由于AdaBoost的各种变种在过去的十年间都得到了发展，Boosting已经成为了集成方法中最重要的一个“家族”了。
 
