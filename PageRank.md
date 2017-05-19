@@ -22,34 +22,34 @@ PageRank提供了一个网页的静态排行，也就是说PageRank为每个页�
 
 为了使用公式表示上述的思想，我们把Web作为一个有向图G=（V,E）这里的V是顶点或节点的集合，例如所有页面的集合，同时E是图中有向边的集合，例如超链接。这里设所有页面的总数为n（如n=|V|）。第i个页面的PageRank分数（由P(i)表示）定义如下
 
-![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.1.png)
+![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.1.PNG)
 
 这里的Oj是页面j的出链接的数量。数学上而言，我们有n个未知数的n个线性方程系统。我们可以用一个矩阵来代表所有的等式。设P是PageRank值的n维列限量，例如：P=（P(1),P(2),…,P(n)）T。
 
 设A是图的邻接矩阵，
 
-![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.2.png)
+![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.2.PNG)
 
 我们可以重写n个等式的系统为
 
-![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.3.png)
+![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.3.PNG)
 
 这是特征系统的特征值方程，这里P的解是特征值为1的特征向量。由于这是一个循环的定义，我们可以使用一个迭代的算法来解决它。事实证明如果满足某些条件，1
 就是最大的特征值，并且PageRank向量P就是主特征向量。Power iteration(幂迭代)就是一个用来寻找P的有名的数学技巧。
 
-![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.4.png)
+![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.4.PNG)
 
 然而问题在于由于Web图不满足条件，上式也不太合适。事实上上式也可以由马尔科夫链得到。然后就可以应用马尔科夫链里的一些理论结果。在扩张Web图使得它满足条件之后，就能得到下面的等式：
 
-![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.5.png)
+![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.5.PNG)
 
 这里的e是全为1的列向量。这样我们就得到了每个页面i的PageRank公式：
 
-![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.6.png)
+![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.6.PNG)
 
 上式等于在原始PageRank论文中给出的公式：
 
-![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.7.png)
+![](https://github.com/ankang1993/data-mining-algorithms/blob/master/figure/6.7.PNG)
 
 参数d被称为阻尼因子，可以将它的值设为0和1之间。另一篇论文中使用的是d=0.85。
 
